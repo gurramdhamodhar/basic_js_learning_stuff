@@ -44,6 +44,8 @@
 
 <p>Using functions, perform to show the role of a user using function call by name role.</p>
 
+<h3>09-05-2024: Day2 of js learning</h3>
+<hr>
 <h2>what is context? how many types in js?</h2>
 <p>there are two contexts in js they are :</p>
 <ol>

@@ -96,13 +96,39 @@ There are two contexts in JavaScript:
          function littleBrotherName(){
              console.log(name);
          }
+       littleBrotherName();
      }
+     sayBrotherName();
      ```
      - sayName: dhamodhar
      - sayBrotherName: raju
      - littleBrotherName: raju
      
      Here output is "raju" for sayBrotherName function. And also the same output is "raju" for littleBrotherName function because low levels can access higher variable information.
+
+   **Example 2:**
+     ```javascript
+     function sayName(){
+         var name = dhamodhar;
+         console.log(name);
+     }
+     sayName();
+     
+     function sayBrotherName(){
+         console.log(name);
+         function littleBrotherName(){
+             console.log(name);
+         }
+         littleBrotherName();
+     }
+     sayBrotherName();
+     ```
+     - sayName: dhamodhar
+     - sayBrotherName: dhamodhar (access from top)
+     - littleBrotherName: dhamodhar (access from top)
+   
+     Here output for all functions is is "dhamodhar" because this lower level access info from top level.
+
 
    - **This:**
    

@@ -43,141 +43,100 @@
 <h2>Task 6</h2>
 
 <p>Using functions, perform to show the role of a user using function call by name role.</p>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Context Types</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        h2 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-        code {
-            background-color: #f4f4f4;
-            padding: 5px;
-            border-radius: 3px;
-            display: block;
-            margin-top: 10px;
-        }
-        ul, ol {
-            color: #666;
-            padding-left: 20px;
-        }
-        ol ol {
-            list-style-type: lower-alpha;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        b {
-            color: #333;
-        }
-    </style>
-</head>
-<body>
-    <h2>What is Context? How many types are there in JavaScript?</h2>
-    <p>There are two contexts in JavaScript:</p>
-    <ol>
-        <li><b>Global Execution Context:</b> Scans all the code.</li>
-        <li><b>Execution Context:</b> Contains three types
-            <ol>
-                <li><b>Variable and Object:</b>
-                    <ul>
-                        <li>Functions are executed when called before the function declaration.</li>
-                        <li>In the case of variables, when we call a variable before initializing it, it shows "<i>undefined</i>".</li>
-                    </ul>
-                    <p><b>Example:</b></p>
-                    <code>
+<br>
+<h3>09-05-2024: Day2 of js learning</h3>
+<hr>
+<h2>What is Context? How many types are there in JavaScript?</h2>
+<p>There are two contexts in JavaScript:</p>
+<ol>
+    <li><b>Global Execution Context:</b> Scans all the code.</li>
+    <li><b>Execution Context:</b> Contains three types
+        <ol>
+            <li><b>Variable and Object:</b>
+                <ul>
+                    <li>Functions are executed when called before the function declaration.</li>
+                    <li>In the case of variables, when we call a variable before initializing it, it shows "<i>undefined</i>".</li>
+                </ul>
+                <p><b>Example:</b></p>
+                <code>
+                    console.log(name);
+                    var name = "dhamodhar"; 
+                    
+                    sayHi("dhamodhar")
+                    function sayHi(){
                         console.log(name);
-                        var name = "dhamodhar"; 
-                        
-                        sayHi("dhamodhar")
-                        function sayHi(){
-                            console.log(name);
-                        }
+                    }
 
-                        var hello = sayHi();
-                        console.log(name); 
-                    </code>
-                </li>
-                <li><b>Scope Chaining:</b>
-                    <ul>
-                        <li>SuperBig: Cannot access lower level info like <b>"Big" and "Small"</b>.</li>
-                        <li>Big: Can access info from <b>"SuperBig"</b> but cannot access from <b>"Small"</b>.</li>
-                        <li>Small: Can access info from all higher levels like <b>"SuperBig" and "Big"</b>.</li>
-                    </ul>
-                    <p><b>Example 1:</b></p>
-                    <code>
-                        function sayName(){
-                            var name = "dhamodhar";
+                    var hello = sayHi();
+                    console.log(name); 
+                </code>
+            </li>
+            <li><b>Scope Chaining:</b>
+                <ul>
+                    <li>SuperBig: Cannot access lower level info like <b>"Big" and "Small"</b>.</li>
+                    <li>Big: Can access info from <b>"SuperBig"</b> but cannot access from <b>"Small"</b>.</li>
+                    <li>Small: Can access info from all higher levels like <b>"SuperBig" and "Big"</b>.</li>
+                </ul>
+                <p><b>Example 1:</b></p>
+                <code>
+                    function sayName(){
+                        var name = "dhamodhar";
+                        console.log(name);
+                    }
+                    sayName();
+                </code>
+                <p><b>
+                    Here the output is "dhamodhar" because "this" cannot access lower levels.
+                </b></p>
+                <code>
+                    function sayBrotherName(){
+                        var name = "raju";
+                        console.log(name);
+                        function littleBrotherName(){
                             console.log(name);
                         }
-                        sayName();
-                    </code>
-                    <p><b>
-                        Here the output is "dhamodhar" because "this" cannot access lower levels.
-                    </b></p>
-                    <code>
-                        function sayBrotherName(){
-                            var name = "raju";
+                    }
+                </code>
+                <p><b>
+                    <p>sayName: dhamodhar</p>
+                    <p>sayBrotherName: raju</p>
+                    <p>littleBrotherName: raju</p>
+                    <p>Here the output is "raju" for the sayBrotherName function.</p>
+                    <p>And also the same output is "raju" for the littleBrotherName function because lower levels can access higher variable information.</p>
+                </b></p>
+                <p><b>Example 2:</b></p>
+                <code>
+                    function sayName(){
+                        var name = "dhamodhar";
+                        console.log(name);
+                    }
+                    sayName();
+                </code>
+                <p><b>
+                    Here the output is "dhamodhar" because "this" cannot access lower levels.
+                </b></p>
+                <code>
+                    function sayBrotherName(){
+                        console.log(name);
+                        function littleBrotherName(){
                             console.log(name);
-                            function littleBrotherName(){
-                                console.log(name);
-                            }
                         }
-                    </code>
-                    <p><b>
-                        <p>sayName: dhamodhar</p>
-                        <p>sayBrotherName: raju</p>
-                        <p>littleBrotherName: raju</p>
-                        <p>Here the output is "raju" for the sayBrotherName function.</p>
-                        <p>And also the same output is "raju" for the littleBrotherName function because lower levels can access higher variable information.</p>
-                    </b></p>
-                    <p><b>Example 2:</b></p>
-                    <code>
-                        function sayName(){
-                            var name = "dhamodhar";
-                            console.log(name);
-                        }
-                        sayName();
-                    </code>
-                    <p><b>
-                        Here the output is "dhamodhar" because "this" cannot access lower levels.
-                    </b></p>
-                    <code>
-                        function sayBrotherName(){
-                            console.log(name);
-                            function littleBrotherName(){
-                                console.log(name);
-                            }
-                        }
-                    </code>
-                    <p><b>
-                        <p>sayName: dhamodhar</p>
-                        <p>sayBrotherName: dhamodhar (accessed from the top)</p>
-                        <p>littleBrotherName: dhamodhar (accessed from the top)</p>
-                    </b></p>
-                </li>
-                <li><b>This:</b>
-                    <ul>
-                        <li>In Node.js in the local terminal, we cannot get any window-related actions by using "this".</li>
-                        <li>In the web, we get files about the window.</li>
-                        <li><b>Example: console.log(this)</b></li>
-                    </ul>
-                </li>
-            </ol>
-        </li>
-    </ol>
-</body>
-</html>
+                    }
+                </code>
+                <p><b>
+                    <p>sayName: dhamodhar</p>
+                    <p>sayBrotherName: dhamodhar (accessed from the top)</p>
+                    <p>littleBrotherName: dhamodhar (accessed from the top)</p>
+                </b></p>
+            </li>
+            <li><b>This:</b>
+                <ul>
+                    <li>In Node.js in the local terminal, we cannot get any window-related actions by using "this".</li>
+                    <li>In the web, we get files about the window.</li>
+                    <li><b>Example: console.log(this)</b></li>
+                </ul>
+            </li>
+        </ol>
+    </li>
+</ol>
+

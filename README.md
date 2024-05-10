@@ -46,97 +46,68 @@
 <br>
 <h3>09-05-2024: Day2 of js learning</h3>
 <hr>
-<h2>What is Context? How many types are there in JavaScript?</h2>
-<p>There are two contexts in JavaScript:</p>
-<ol>
-    <li><b>Global Execution Context:</b> Scans all the code.</li>
-    <li><b>Execution Context:</b> Contains three types
-        <ol>
-            <li><b>Variable and Object:</b>
-                <ul>
-                    <li>Functions are executed when called before the function declaration.</li>
-                    <li>In the case of variables, when we call a variable before initializing it, it shows "<i>undefined</i>".</li>
-                </ul>
-                <p><b>Example:</b></p>
-                <code>
-                    console.log(name);
-                    var name = "dhamodhar"; 
-                    
-                    sayHi("dhamodhar")
-                    function sayHi(){
-                        console.log(name);
-                    }
 
-                    var hello = sayHi();
-                    console.log(name); 
-                </code>
-            </li>
-            <li><b>Scope Chaining:</b>
-                <ul>
-                    <li>SuperBig: Cannot access lower level info like <b>"Big" and "Small"</b>.</li>
-                    <li>Big: Can access info from <b>"SuperBig"</b> but cannot access from <b>"Small"</b>.</li>
-                    <li>Small: Can access info from all higher levels like <b>"SuperBig" and "Big"</b>.</li>
-                </ul>
-                <p><b>Example 1:</b></p>
-                <code>
-                    function sayName(){
-                        var name = "dhamodhar";
-                        console.log(name);
-                    }
-                    sayName();
-                </code>
-                <p><b>
-                    Here the output is "dhamodhar" because "this" cannot access lower levels.
-                </b></p>
-                <code>
-                    function sayBrotherName(){
-                        var name = "raju";
-                        console.log(name);
-                        function littleBrotherName(){
-                            console.log(name);
-                        }
-                    }
-                </code>
-                <p><b>
-                    <p>sayName: dhamodhar</p>
-                    <p>sayBrotherName: raju</p>
-                    <p>littleBrotherName: raju</p>
-                    <p>Here the output is "raju" for the sayBrotherName function.</p>
-                    <p>And also the same output is "raju" for the littleBrotherName function because lower levels can access higher variable information.</p>
-                </b></p>
-                <p><b>Example 2:</b></p>
-                <code>
-                    function sayName(){
-                        var name = "dhamodhar";
-                        console.log(name);
-                    }
-                    sayName();
-                </code>
-                <p><b>
-                    Here the output is "dhamodhar" because "this" cannot access lower levels.
-                </b></p>
-                <code>
-                    function sayBrotherName(){
-                        console.log(name);
-                        function littleBrotherName(){
-                            console.log(name);
-                        }
-                    }
-                </code>
-                <p><b>
-                    <p>sayName: dhamodhar</p>
-                    <p>sayBrotherName: dhamodhar (accessed from the top)</p>
-                    <p>littleBrotherName: dhamodhar (accessed from the top)</p>
-                </b></p>
-            </li>
-            <li><b>This:</b>
-                <ul>
-                    <li>In Node.js in the local terminal, we cannot get any window-related actions by using "this".</li>
-                    <li>In the web, we get files about the window.</li>
-                    <li><b>Example: console.log(this)</b></li>
-                </ul>
-            </li>
-        </ol>
-    </li>
-</ol>
+#### What is context? How many types in JavaScript?
 
+There are two contexts in JavaScript:
+
+1. Global execution context: scans all the code.
+2. Execution context: contain three types
+
+   - **Variable and Object:**
+   
+     - Functions are executed when called before the function declaration.
+     - In the case of variables, when we call a variable before initializing it, it shows "undefined".
+
+     **Example:**
+     ```javascript
+     console.log(name);
+     var name = "dhamodhar"; 
+     
+     sayHi("dhamodhar")
+     function sayHi(){
+         console.log(name);
+     }
+
+     var hello = sayHi();
+     console.log(name); 
+     ```
+
+   - **Scope chaining:**
+   
+     - SuperBig: This cannot access lower-level info like "Big, small".
+     - Big: Can access info from "SuperBig" but cannot access from "small".
+     - Small: Can access info from all higher levels like "SuperBig, Big".
+
+     **Example 1:**
+     ```javascript
+     function sayName(){
+         var name = dhamodhar;
+         console.log(name);
+     }
+     sayName();
+     ```
+     Here output is "dhamodhar" because this cannot access from low level.
+
+     ```javascript
+     function sayBrotherName(){
+         var name = "raju";
+         console.log(name);
+         function littleBrotherName(){
+             console.log(name);
+         }
+     }
+     ```
+     - sayName: dhamodhar
+     - sayBrotherName: raju
+     - littleBrotherName: raju
+     
+     Here output is "raju" for sayBrotherName function. And also the same output is "raju" for littleBrotherName function because low levels can access higher variable information.
+
+   - **This:**
+   
+     - In Node.js in the local terminal, we cannot get any window-related actions by using "this".
+     - In the web, we get files about the window.
+     - Example: console.log(this)
+
+--- 

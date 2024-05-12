@@ -137,3 +137,21 @@ There are two contexts in JavaScript:
      - Example: console.log(this)
 
 --- 
+<br>
+<h3>10-05-2024: Day3 of js learning</h3>
+<hr>
+
+<h2>Task 7</h2>
+
+<p>Create an array to display cities in India. Add cities, delete cities, update cities, and call a particular city.</p>
+
+<h2>Task 8</h2>
+
+<p>Using objects, display how many courses the user has taken.</p>
+
+<br>
+<h3>11-05-2024: Day4 of js learning</h3>
+<hr>
+<h2>Task 9</h2>
+<p>Create a bill for the customer to know how many items are taken, with the total amount to be paid to the shop using arrays, array.length, and also a for loop</p>
+

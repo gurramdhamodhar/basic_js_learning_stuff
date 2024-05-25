@@ -1,0 +1,20 @@
+.container{
+    margin-top: 10%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    align-items: center;
+    background-color: yellow;
+}
+
+.list-group{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.btn1{
+    margin-left: 10%;
+    margin-top: 1.5%;
+}
+.btn2{
+    margin-top: 1.5%;
+}

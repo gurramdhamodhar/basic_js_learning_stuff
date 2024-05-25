@@ -1,0 +1,58 @@
+.start, .reset, .stop, .h1, .count, .display{
+    text-align: center;
+    font-size: 50px;
+}
+
+.start, .reset, .stop{
+    margin-top: 200px;
+    border-radius: 10px;
+    background-image: linear-gradient(to top right, white, black); 
+}
+
+.h1{
+    padding-top: 3rem;
+}
+
+.start{
+    display: inline-block;
+    position: absolute;
+    left: 550px;
+}
+
+.reset{
+    position: absolute;
+    left: 700px;
+}
+
+.stop{
+    position: absolute;
+    left: 850px;
+}
+
+.display{
+    border: 10px black solid;
+    width: 720px;
+    height: 450px;
+    position: absolute;
+    left: 400px;
+}
+
+.hour, .minute, .count{
+    display: inline-block;
+    font-size: 50px;
+}
+
+.hour{
+    position: absolute;
+    left: 690px;
+}
+
+.minute{
+    position: absolute;
+    left: 750px;
+}
+
+.count{
+    position: absolute;
+    left: 830px;
+}
